@@ -38,6 +38,12 @@ spring:
             - Path=/api/v1/personalized-techniques/**
           filters:
             - AddResponseHeader=X-Powered-By, Kora Gateway Service
+        - id: history-favorites-route
+          uri: lb://history-favorites-service
+          predicates:
+            - Path=/api/v1/history-favorites/**
+          filters:
+            - AddResponseHeader=X-Powered-By, Kora Gateway Service
 management:
   endpoints:
     web:
